@@ -36,11 +36,6 @@ app.use('/api/users', usersRoute)
 app.use('/api/hotels', hotelsRoute)
 app.use('/api/rooms', roomsRoute)
 
-import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './swagger-output.json' assert { type: 'json' };
-
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 //**Error handling middleware in all routes */
 app.use((err, req, res, next) => {
 	const errorStatus = err.status || 500 //va a ser el que provenga de err.status o 500
