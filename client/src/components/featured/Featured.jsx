@@ -3,7 +3,7 @@ import './featured.css';
 
 const Featured = () => {
 	//en el package json del client se agrega una key , proxy, en este caso con el localohost/api asi no hay que escribir la direccion completa en el use fetch. No me anduvo el proxy por lo que tuve que instalar npm i cors e importarlo en el index para poder hacer el fetch.
-	const { data, loading, error } = useFetch('http://localhost:8080/api/hotels/countByCity?cities=Ranelagh,madrid,london');
+	const { data, loading } = useFetch('http://localhost:8080/api/hotels/countByCity?cities=Ranelagh,madrid,london');
 	//Aqui data va a traer lo que venga del metodo que se ejecuta en el back cuando hacemos el get a esta url
 	
 	return (

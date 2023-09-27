@@ -12,20 +12,20 @@ const List = () => {
 	//with useLocation hook i receive an object, inside that object are the states from Navigate send from header
 	const location = useLocation();
 
-	const [destination, setDestination] = useState(location.state.destination);
 	const [dates, setDates] = useState(location.state.dates);
 	const [openDate, setOpenDate] = useState(false);
-	const [options, setOptions] = useState(location.state.options);
 	const [min, setMin] = useState(undefined);
 	const [max, setMax] = useState(undefined);
 
+  const destination = location.state.destination;
+  const options = location.state.options;
 	function addDays(date, days) {
 		var result = new Date(date);
 		result.setDate(result.getDate() + days);
 		return result;
 	}
 
-	const { data, loading, error, reFetch } = useFetch(`http://localhost:8080/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`);
+	const { data, loading, reFetch } = useFetch(`http://localhost:8080/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`);
 
   const handleClick = () => {
       reFetch()
