@@ -3,7 +3,7 @@ import './featuredproperties.css';
 
 const FeaturedProperties = () => {
 	const { data, loading } = useFetch(
-		'http://localhost:8080/api/hotels?featured=true&limit=4'
+		'https://booking-clone-api.onrender.com/api/hotels?featured=true&limit=4'
 	);
 
 	return (

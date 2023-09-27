@@ -9,7 +9,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Reserve = ({ setOpen, hotelId }) => {
-	const { data } = useFetch(`http://localhost:8080/api/hotels/room/${hotelId}`);
+	const { data } = useFetch(`https://booking-clone-api.onrender.com/api/hotels/room/${hotelId}`);
 	const { dates } = useContext(SearchContext);
 
 	//as dates contains an start date and an end date we create a function to get the dates  as a range
@@ -52,7 +52,7 @@ const Reserve = ({ setOpen, hotelId }) => {
 				selectedRooms.map((roomId) => {
 					//body:
 					const res = axios.put(
-						`http://localhost:8080/api/rooms/availability/${roomId}`,
+						`https://booking-clone-api.onrender.com/api/rooms/availability/${roomId}`,
 						{ dates: allDates }
 					);
 					return res.data;

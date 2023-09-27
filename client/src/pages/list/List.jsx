@@ -25,7 +25,7 @@ const List = () => {
 		return result;
 	}
 
-	const { data, loading, reFetch } = useFetch(`http://localhost:8080/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`);
+	const { data, loading, reFetch } = useFetch(`https://booking-clone-api.onrender.com/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`);
 
   const handleClick = () => {
       reFetch()
